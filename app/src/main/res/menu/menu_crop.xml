@@ -4,7 +4,6 @@
 
 
     <item
-        android:id="@+id/ok"
         android:orderInCategory="80"
         android:title="完成"
         app:showAsAction="ifRoom"

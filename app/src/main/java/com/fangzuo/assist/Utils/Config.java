@@ -90,8 +90,11 @@ public class Config {
 
     public static final int RegisterActivity                        =10026;
     public static final int CompanyActivity                         =10027;
-    public static final int PicUtilActivity                         =10028;
-    public static final int GetPicActivity                          =10029;
+    public static final int SignActivity                            =10028;
+    public static final int DealPicActivity                          =10029;
     public static final int GetFileActivity                         =10030;
+    public static final int SetActivity                             =10031;
+    public static final int PicHistoryActivity                         =10032;
+    public static final int DealPic2Activity                         =10033;
 
 }

@@ -1,22 +1,17 @@
 package com.fangzuo.assist.Fragment;
 
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
 import com.fangzuo.assist.ABase.BaseFragment;
 import com.fangzuo.assist.Activity.CompanyActivity;
-import com.fangzuo.assist.Activity.GetPicActivity;
-import com.fangzuo.assist.Activity.PicUtilActivity;
+import com.fangzuo.assist.Activity.DealPicActivity;
 import com.fangzuo.assist.Activity.RegisterActivity;
 import com.fangzuo.assist.Adapter.P1OneAdapter;
 import com.fangzuo.assist.Beans.SettingList;
@@ -100,9 +95,9 @@ public class P1OneFragment extends BaseFragment {
                     case Config.CompanyActivity://箱码调拨单
                         CompanyActivity.start(mContext);
                         break;
-                    case Config.GetPicActivity://箱码调拨单
-                        GetPicActivity.start(mContext);
-                        break;
+//                    case Config.GetPicActivity://箱码调拨单
+//                        DealPicActivity.start(mContext);
+//                        break;
 
 //                    case Config.ProductGet4BoxActivity://生产领料(箱码)
 //                        PagerForActivity.start(mContext, Config.ProductGet4BoxActivity);

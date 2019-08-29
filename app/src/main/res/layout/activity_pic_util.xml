@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.fangzuo.assist.Activity.PicUtilActivity">
+    tools:context="com.fangzuo.assist.Activity.SignActivity">
     <include layout="@layout/top_bar"/>
     <com.venusic.handwrite.view.HandWriteView
         android:id="@+id/view"

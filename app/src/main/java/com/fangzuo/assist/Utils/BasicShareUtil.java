@@ -43,11 +43,11 @@ public class BasicShareUtil {
     }
 
     public String getIP(){
-        return shared.getString("serverIp","");
+        return shared.getString("serverIp","192.168.0.0");
     }
 
     public String getPort(){
-        return shared.getString("serverPort","");
+        return shared.getString("serverPort","8080");
     }
 
     public String getBaseURL(){

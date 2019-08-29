@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    tools:context="com.fangzuo.assist.Activity.GetPicActivity">
+    tools:context="com.fangzuo.assist.Activity.DealPicActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -83,6 +83,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:visibility="gone"
                 android:id="@+id/btn1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -93,16 +94,7 @@
             <include layout="@layout/line_shu" />
 
             <Button
-                android:id="@+id/btn2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/btn_login"
-                android:text="保存图片到本地" />
-
-            <include layout="@layout/line_shu" />
-
-            <Button
+                android:visibility="gone"
                 android:id="@+id/btn4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -112,12 +104,29 @@
         </LinearLayout>
         <include layout="@layout/line_heng" />
 
-        <Button
-            android:id="@+id/btn_add"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_login"
-            android:text="添加水印" />
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@drawable/btn_login"
+                android:text="添加水印" />
+            <include layout="@layout/line_shu" />
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_login"
+                android:text="保存图片到本地" />
+
+
+
+        </LinearLayout>
 
 
     </LinearLayout>

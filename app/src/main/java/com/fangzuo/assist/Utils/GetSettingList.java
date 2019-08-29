@@ -15,10 +15,14 @@ import java.util.ArrayList;
 public class GetSettingList {
     public static ArrayList<SettingList> getAppList() {
         ArrayList<SettingList> items = new ArrayList<>();
-        items.add(new SettingList("注册",Config.RegisterActivity,R.mipmap.purchaseorder));
-        items.add(new SettingList("公司管理项目信息",Config.CompanyActivity,R.mipmap.purchaseorder));
-        items.add(new SettingList("照片处理",Config.GetPicActivity,R.mipmap.purchaseorder));
+//        items.add(new SettingList("注册",Config.RegisterActivity,R.mipmap.purchaseorder));
+//        items.add(new SettingList("公司管理项目信息",Config.CompanyActivity,R.mipmap.purchaseorder));
 //        items.add(new SettingList("获取文件列表",Config.GetFileActivity,R.mipmap.purchaseorder));
+        items.add(new SettingList("设置服务器地址",Config.SetActivity,R.mipmap.setting_home));
+        items.add(new SettingList("设置签名",Config.SignActivity,R.mipmap.sign_home));
+        items.add(new SettingList("处理图片",Config.DealPicActivity,R.mipmap.pic_home));
+//        items.add(new SettingList("处理图片2",Config.DealPic2Activity,R.mipmap.pic_home));
+//        items.add(new SettingList("历史图片",Config.PicHistoryActivity,R.mipmap.history_home));
 
         return items;
     }

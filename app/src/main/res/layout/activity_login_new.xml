@@ -235,7 +235,6 @@
 
 
             <LinearLayout
-                android:id="@+id/ll_common_set"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="8"
@@ -284,7 +283,6 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/btn_test_tomcat"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginRight="1dp"
@@ -293,7 +291,6 @@
                         android:text="Tomcat测试" />
 
                     <Button
-                        android:id="@+id/btn_test_data"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="1dp"
@@ -310,7 +307,6 @@
 
 
                 <LinearLayout
-                    android:id="@+id/ll_user_msg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -321,7 +317,6 @@
                         android:textColorHint="@color/colorPrimaryDark">
 
                         <EditText
-                            android:id="@+id/ed_server"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="9"
@@ -393,7 +388,6 @@
                         android:textColorHint="@color/colorPrimaryDark">
 
                         <EditText
-                            android:id="@+id/ed_pwd"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="9"
@@ -414,7 +408,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_link_btn"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1.1"

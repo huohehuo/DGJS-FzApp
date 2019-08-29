@@ -51,7 +51,7 @@ import com.fangzuo.greendao.gen.DaoSession;
 import com.fangzuo.greendao.gen.T_DetailDao;
 import com.fangzuo.greendao.gen.T_mainDao;
 import com.google.gson.Gson;
-import com.nineoldandroids.view.ViewHelper;
+//import com.nineoldandroids.view.ViewHelper;
 import com.orhanobut.hawk.Hawk;
 import com.symbol.scanning.BarcodeManager;
 import com.symbol.scanning.ScanDataCollection;
@@ -712,15 +712,15 @@ protected void onResume() {
 
                 if (drawerView.getTag().equals("LEFT")) {
                     float leftScale = 1 - scale;
-                    ViewHelper.setScaleX(mMenu, leftScale);//drawer
-                    ViewHelper.setScaleY(mMenu, leftScale);//drawer
-                    ViewHelper.setAlpha(mMenu, 0.8f + 0.2f * (leftScale));
-                    ViewHelper.setTranslationX(mContent, (1 - scale));
-                    ViewHelper.setPivotX(mContent, 0);
-                    ViewHelper.setPivotY(mContent, mContent.getMeasuredHeight() / 2);
-                    mContent.invalidate();
-                    ViewHelper.setScaleX(mContent, right);
-                    ViewHelper.setScaleY(mContent, right);
+//                    ViewHelper.setScaleX(mMenu, leftScale);//drawer
+//                    ViewHelper.setScaleY(mMenu, leftScale);//drawer
+//                    ViewHelper.setAlpha(mMenu, 0.8f + 0.2f * (leftScale));
+//                    ViewHelper.setTranslationX(mContent, (1 - scale));
+//                    ViewHelper.setPivotX(mContent, 0);
+//                    ViewHelper.setPivotY(mContent, mContent.getMeasuredHeight() / 2);
+//                    mContent.invalidate();
+//                    ViewHelper.setScaleX(mContent, right);
+//                    ViewHelper.setScaleY(mContent, right);
                 }
             }
 

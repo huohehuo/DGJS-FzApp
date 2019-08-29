@@ -10,6 +10,8 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.View;
 
+import com.fangzuo.assist.Activity.Crash.App;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -172,6 +174,7 @@ public class ImageUtil {
             bm.compress(Bitmap.CompressFormat.PNG, 90, out);
             out.flush();
             out.close();
+            Toast.showText(App.getContext(),"保存成功");
             Lg.e("保存图片", "已经保存");
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
