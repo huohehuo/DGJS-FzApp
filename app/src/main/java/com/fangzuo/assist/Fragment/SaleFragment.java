@@ -9,12 +9,8 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.fangzuo.assist.ABase.BaseFragment;
-import com.fangzuo.assist.Activity.ProduceAndGetActivity;
 import com.fangzuo.assist.Adapter.GridViewAdapter;
 import com.fangzuo.assist.Utils.GetSettingList;
-import com.fangzuo.assist.Activity.PushDownActivity;
-import com.fangzuo.assist.Activity.SaleOrderActivity;
-import com.fangzuo.assist.Activity.SoldOutActivity;
 import com.fangzuo.assist.R;
 
 import butterknife.BindView;
@@ -51,17 +47,17 @@ public class SaleFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i){
-                    case 0://销售订单
-                        startNewActivity(SaleOrderActivity.class,null);
-                        break;
-                    case 1://销售出库
-                        startNewActivity(SoldOutActivity.class,null);
-                        break;
-                    case 2://单据下推
-                        startNewActivity(PushDownActivity.class,null);
-                        break;
-                    case 3://生产领料
-                        startNewActivity(ProduceAndGetActivity.class,null);
+//                    case 0://销售订单
+//                        startNewActivity(SaleOrderActivity.class,null);
+//                        break;
+//                    case 1://销售出库
+//                        startNewActivity(SoldOutActivity.class,null);
+//                        break;
+//                    case 2://单据下推
+//                        startNewActivity(PushDownActivity.class,null);
+//                        break;
+//                    case 3://生产领料
+//                        startNewActivity(ProduceAndGetActivity.class,null);
                 }
             }
         });

@@ -11,10 +11,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageInfo;
+//import android.content.pm.PackageManager;
+//import android.device.ScanDevice;
+//import android.device.ScanManager;
+//import android.device.scanner.configuration.PropertyID;
 import android.content.pm.PackageManager;
-import android.device.ScanDevice;
-import android.device.ScanManager;
-import android.device.scanner.configuration.PropertyID;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -53,11 +54,11 @@ import com.fangzuo.greendao.gen.T_mainDao;
 import com.google.gson.Gson;
 //import com.nineoldandroids.view.ViewHelper;
 import com.orhanobut.hawk.Hawk;
-import com.symbol.scanning.BarcodeManager;
-import com.symbol.scanning.ScanDataCollection;
-import com.symbol.scanning.Scanner;
-import com.symbol.scanning.ScannerException;
-import com.symbol.scanning.ScannerInfo;
+//import com.symbol.scanning.BarcodeManager;
+//import com.symbol.scanning.ScanDataCollection;
+//import com.symbol.scanning.Scanner;
+//import com.symbol.scanning.ScannerException;
+//import com.symbol.scanning.ScannerInfo;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -67,6 +68,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by NB on 2017/8/1.
@@ -95,7 +97,7 @@ public abstract class BaseActivity extends FragmentActivity {
     }
 
     //u8000
-    private ScanDevice sm;
+//    private ScanDevice sm;
     private BroadcastReceiver mScanDataReceiver;
 //    = new BroadcastReceiver() {
 //        @Override
@@ -299,7 +301,7 @@ protected void onResume() {
                         }
                     };
                 }
-                sm = new ScanDevice();
+//                sm = new ScanDevice();
                 IntentFilter filter = new IntentFilter();
                 filter.addAction("scan.rcv.message");
                 registerReceiver(mScanDataReceiver, filter);
@@ -356,20 +358,20 @@ protected void onResume() {
                 xdlFilter.addAction(ACTION_XDL_SCAN_RESULT);
                 registerReceiver(mScanDataReceiverForXDL, xdlFilter);
                 break;
-            case 6://M36:注意：不能再该设备的Scan Config程序中添加本程序，不然会导致无法识别崩溃
-                if (null== mBarcodeManager)mBarcodeManager = new BarcodeManager();
-                if (null == mInfo)mInfo =new ScannerInfo("se4710_cam_builtin", "DECODER_2D");
-                if (null == mScanner)mScanner = mBarcodeManager.getDevice(mInfo);
-                try
-                {
-                    mScanner.enable();
-                    setDecodeListener();
-                }
-                catch(ScannerException se)
-                {
-                    se.printStackTrace();
-                }
-                break;
+//            case 6://M36:注意：不能再该设备的Scan Config程序中添加本程序，不然会导致无法识别崩溃
+//                if (null== mBarcodeManager)mBarcodeManager = new BarcodeManager();
+//                if (null == mInfo)mInfo =new ScannerInfo("se4710_cam_builtin", "DECODER_2D");
+//                if (null == mScanner)mScanner = mBarcodeManager.getDevice(mInfo);
+//                try
+//                {
+//                    mScanner.enable();
+//                    setDecodeListener();
+//                }
+//                catch(ScannerException se)
+//                {
+//                    se.printStackTrace();
+//                }
+//                break;
             case 7://M80s");
                 if (null==mScanDataReceiverForM80s){
                     mScanDataReceiverForM80s = new BroadcastReceiver() {
@@ -423,24 +425,24 @@ protected void onResume() {
     protected void onPause() {
         super.onPause();
         try{
-            if (App.PDA_Choose==6){
-                try
-                {
-                    if(!canDecode){
-                        mScanner.cancelRead();
-                    }
-                    mScanner.disable();
-                }
-                catch(ScannerException se)
-                {
-                    se.printStackTrace();
-                }
-                finally
-                {
-                    mScanner.removeDataListener(mDataListener);
-                    canDecode = true;
-                }
-            }
+//            if (App.PDA_Choose==6){
+//                try
+//                {
+//                    if(!canDecode){
+//                        mScanner.cancelRead();
+//                    }
+//                    mScanner.disable();
+//                }
+//                catch(ScannerException se)
+//                {
+//                    se.printStackTrace();
+//                }
+//                finally
+//                {
+//                    mScanner.removeDataListener(mDataListener);
+//                    canDecode = true;
+//                }
+//            }
 
             if (App.PDA_Choose==1 && null!=mScanDataReceiverForG02A)unregisterReceiver(mScanDataReceiverForG02A);
             if (App.PDA_Choose==2 && null!=mScanDataReceiver)unregisterReceiver(mScanDataReceiver);
@@ -476,37 +478,37 @@ protected void onResume() {
     }
 
     //M36-------------------------------------------------------------------------------------------------------
-    private BarcodeManager mBarcodeManager;
-    private ScannerInfo mInfo;
-    private Scanner mScanner;
+//    private BarcodeManager mBarcodeManager;
+//    private ScannerInfo mInfo;
+//    private Scanner mScanner;
     //    private List<ScannerInfo> scanInfoList = mBarcodeManager.getSupportedDevicesInfo();
-    private Scanner.DataListener mDataListener;
+//    private Scanner.DataListener mDataListener;
     private boolean canDecode = true;
-    public void setDecodeListener()
-    {
-        mDataListener =  new Scanner.DataListener()
-        {
-            public void onData(ScanDataCollection scanDataCollection)
-            {
-                String data = "";
-                ArrayList<ScanDataCollection.ScanData> scanDataList = scanDataCollection.getScanData();
-                for(ScanDataCollection.ScanData scanData :scanDataList)
-                {
-                    data = scanData.getData();
-                }
-                final String finalData = data;
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        OnReceive(finalData);
-                    }
-                });
-                canDecode = true;
-            }
-        };
-
-        mScanner.addDataListener(mDataListener);
-    }
+//    public void setDecodeListener()
+//    {
+//        mDataListener =  new Scanner.DataListener()
+//        {
+//            public void onData(ScanDataCollection scanDataCollection)
+//            {
+//                String data = "";
+//                ArrayList<ScanDataCollection.ScanData> scanDataList = scanDataCollection.getScanData();
+//                for(ScanDataCollection.ScanData scanData :scanDataList)
+//                {
+//                    data = scanData.getData();
+//                }
+//                final String finalData = data;
+//                runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        OnReceive(finalData);
+//                    }
+//                });
+//                canDecode = true;
+//            }
+//        };
+//
+//        mScanner.addDataListener(mDataListener);
+//    }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
@@ -515,19 +517,19 @@ protected void onResume() {
                 || (keyCode == KeyEvent.KEYCODE_BUTTON_L2))
         {
 //            Log.i("ScanApp", "onKeyDown");
-            if((App.PDA_Choose==6 && canDecode && event.getRepeatCount() == 0))
-            {
-                canDecode = false;
-                try
-                {
-                    mScanner.read();
-                }
-                catch (ScannerException se)
-                {
-                    se.printStackTrace();
-                }
-                return true;
-            }
+//            if((App.PDA_Choose==6 && canDecode && event.getRepeatCount() == 0))
+//            {
+//                canDecode = false;
+//                try
+//                {
+//                    mScanner.read();
+//                }
+//                catch (ScannerException se)
+//                {
+//                    se.printStackTrace();
+//                }
+//                return true;
+//            }
         }
         return super.onKeyDown(keyCode, event);
     }
@@ -539,19 +541,19 @@ protected void onResume() {
                 || (keyCode == KeyEvent.KEYCODE_BUTTON_L2))
         {
 //            Log.i("ScanApp", "onKeyUp");
-            if(App.PDA_Choose==6 && !canDecode)
-            {
-                try
-                {
-                    mScanner.cancelRead();
-                }
-                catch (ScannerException se)
-                {
-                    se.printStackTrace();
-                }
-                canDecode = true;
-                return true;
-            }
+//            if(App.PDA_Choose==6 && !canDecode)
+//            {
+//                try
+//                {
+//                    mScanner.cancelRead();
+//                }
+//                catch (ScannerException se)
+//                {
+//                    se.printStackTrace();
+//                }
+//                canDecode = true;
+//                return true;
+//            }
         }
         return super.onKeyUp(keyCode, event);
     }

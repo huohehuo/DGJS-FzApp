@@ -45,11 +45,11 @@ import com.fangzuo.greendao.gen.DaoSession;
 import com.fangzuo.greendao.gen.UserDao;
 import com.google.gson.Gson;
 import com.orhanobut.hawk.Hawk;
-import com.symbol.scanning.BarcodeManager;
-import com.symbol.scanning.ScanDataCollection;
-import com.symbol.scanning.Scanner;
-import com.symbol.scanning.ScannerException;
-import com.symbol.scanning.ScannerInfo;
+//import com.symbol.scanning.BarcodeManager;
+//import com.symbol.scanning.ScanDataCollection;
+//import com.symbol.scanning.Scanner;
+//import com.symbol.scanning.ScannerException;
+//import com.symbol.scanning.ScannerInfo;
 
 import java.util.ArrayList;
 import java.util.List;

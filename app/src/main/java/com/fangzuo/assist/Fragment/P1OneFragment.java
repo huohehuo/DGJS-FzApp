@@ -10,8 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.fangzuo.assist.ABase.BaseFragment;
-import com.fangzuo.assist.Activity.CompanyActivity;
-import com.fangzuo.assist.Activity.DealPicActivity;
 import com.fangzuo.assist.Activity.RegisterActivity;
 import com.fangzuo.assist.Adapter.P1OneAdapter;
 import com.fangzuo.assist.Beans.SettingList;
@@ -92,9 +90,9 @@ public class P1OneFragment extends BaseFragment {
                     case Config.RegisterActivity://箱码调拨单
                         RegisterActivity.start(mContext);
                         break;
-                    case Config.CompanyActivity://箱码调拨单
-                        CompanyActivity.start(mContext);
-                        break;
+//                    case Config.CompanyActivity://箱码调拨单
+//                        CompanyActivity.start(mContext);
+//                        break;
 //                    case Config.GetPicActivity://箱码调拨单
 //                        DealPicActivity.start(mContext);
 //                        break;

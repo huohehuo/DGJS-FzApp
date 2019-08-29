@@ -6,10 +6,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+//import android.content.IntentFilter;
+//import android.device.ScanDevice;
+//import android.device.ScanManager;
+//import android.device.scanner.configuration.PropertyID;
 import android.content.IntentFilter;
-import android.device.ScanDevice;
-import android.device.ScanManager;
-import android.device.scanner.configuration.PropertyID;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
@@ -48,7 +49,7 @@ public abstract class BaseFragment extends Fragment {
 //        registerBroadCast(mScanDataReceiver);
     }
     //u8000
-    private ScanDevice sm;
+//    private ScanDevice sm;
     private BroadcastReceiver mScanDataReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -271,7 +272,7 @@ public void registerBroadCast(BroadcastReceiver mScanDataReceiver) {
                 getActivity().registerReceiver(mScanDataReceiverForG02A, scanDataIntentFilter);
             } else if (App.PDA_Choose==2){
                 //u8000
-                sm = new ScanDevice();
+//                sm = new ScanDevice();
                 IntentFilter filter = new IntentFilter();
                 filter.addAction("scan.rcv.message");
                 getActivity().registerReceiver(mScanDataReceiver, filter);

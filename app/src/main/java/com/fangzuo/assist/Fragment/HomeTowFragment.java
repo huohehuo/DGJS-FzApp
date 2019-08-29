@@ -86,19 +86,6 @@ public class HomeTowFragment extends BaseFragment {
         adapter.addAll(fileManager.getImgListByDir(baseLoc + "fangzuo/"));
     }
 
-//    private AlertDialog.Builder builder;
-//    String[] items_sout = new String[]{"原单", "销售订单下推销售出库单","VMI销售订单下推销售出库单","退货通知单下推销售退货单"};
-//    String[] items_tb = new String[]{"挑板领料1", "挑板入库1"};
-//    String[] items_tb2 = new String[]{"挑板领料2", "挑板入库2"};
-//    String[] items_tb3 = new String[]{"挑板领料3", "挑板入库3"};
-//    String[] items_pk = new String[]{"盘亏入库", "VMI盘亏入库"};
-//    String[] items_gb = new String[]{"改板领料", "改板入库"};
-//    String[] items_dc = new String[]{"代存出库", "代存入库"};
-////    String[] items_db = new String[]{"组织间调拨", "跨组织调拨", "调拨申请单下推直接调拨单", "VMI调拨申请单下推直接调拨单"};
-//    String[] items_db = new String[]{"组织间调拨", "跨组织调拨", "调拨申请单下推直接调拨单"};
-////    String[] items_in_out = new String[]{"样板出库", "第三方货物入库","第三方货物出库","出库申请单下推其他出库单"};
-//    String[] items_in_out = new String[]{"样板出库", "第三方货物入库","第三方货物出库"};
-
     @Override
     protected void initListener() {
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {

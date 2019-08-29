@@ -3,7 +3,6 @@ package com.fangzuo.assist.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +11,7 @@ import android.widget.GridView;
 
 import com.fangzuo.assist.ABase.BaseFragment;
 import com.fangzuo.assist.Adapter.GridViewAdapter;
-import com.fangzuo.assist.Beans.SettingList;
 import com.fangzuo.assist.Utils.GetSettingList;
-import com.fangzuo.assist.Activity.ProductInStorageActivity;
-import com.fangzuo.assist.Activity.PurchaseInStorageActivity;
-import com.fangzuo.assist.Activity.PurchaseOrderActivity;
 import com.fangzuo.assist.R;
 
 import butterknife.BindView;
@@ -58,15 +53,15 @@ public class PurchaseFragment extends BaseFragment {
 //                Log.e("listitem",tv.tv);
 //                switch (tv.tag){
                 switch (i) {
-                    case 0://采购订单
-                        startNewActivity(PurchaseOrderActivity.class, null);
-                        break;
-                    case 1://外购入库
-                        startNewActivity(PurchaseInStorageActivity.class, null);
-                        break;
-                    case 2://产品入库
-                        startNewActivity(ProductInStorageActivity.class, null);
-                        break;
+//                    case 0://采购订单
+//                        startNewActivity(PurchaseOrderActivity.class, null);
+//                        break;
+//                    case 1://外购入库
+//                        startNewActivity(PurchaseInStorageActivity.class, null);
+//                        break;
+//                    case 2://产品入库
+//                        startNewActivity(ProductInStorageActivity.class, null);
+//                        break;
                 }
             }
         });

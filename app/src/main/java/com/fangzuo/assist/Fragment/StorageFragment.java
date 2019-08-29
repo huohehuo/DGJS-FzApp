@@ -11,10 +11,6 @@ import android.widget.GridView;
 import com.fangzuo.assist.ABase.BaseFragment;
 import com.fangzuo.assist.Adapter.GridViewAdapter;
 import com.fangzuo.assist.Utils.GetSettingList;
-import com.fangzuo.assist.Activity.DBActivity;
-import com.fangzuo.assist.Activity.OtherInStoreActivity;
-import com.fangzuo.assist.Activity.OtherOutStoreActivity;
-import com.fangzuo.assist.Activity.PDActivity;
 import com.fangzuo.assist.R;
 
 import butterknife.BindView;
@@ -53,18 +49,18 @@ public class StorageFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i){
-                    case 0://盘点
-                        startNewActivity(PDActivity.class,null);
-                        break;
-                    case 1://调拨
-                        startNewActivity(DBActivity.class,null);
-                        break;
-                    case 2://其他入库
-                        startNewActivity(OtherInStoreActivity.class,null);
-                        break;
-                    case 3://其他出库
-                        startNewActivity(OtherOutStoreActivity.class,null);
-                        break;
+//                    case 0://盘点
+//                        startNewActivity(PDActivity.class,null);
+//                        break;
+//                    case 1://调拨
+//                        startNewActivity(DBActivity.class,null);
+//                        break;
+//                    case 2://其他入库
+//                        startNewActivity(OtherInStoreActivity.class,null);
+//                        break;
+//                    case 3://其他出库
+//                        startNewActivity(OtherOutStoreActivity.class,null);
+//                        break;
                 }
             }
         });

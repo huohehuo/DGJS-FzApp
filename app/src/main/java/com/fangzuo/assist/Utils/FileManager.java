@@ -109,6 +109,7 @@ public class FileManager {
         }
         File[] files = directory.listFiles();
         //对文件进行排序
+        if (null==files || files.length<= 0)return imgPaths;
         Arrays.sort(files, new FileComparator());
         for (File file : files) {
             String path = file.getAbsolutePath();
