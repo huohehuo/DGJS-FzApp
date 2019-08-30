@@ -87,6 +87,9 @@ public class Config {
     public static final int DBActivity                              =10025;
 
 
+    public static final String PicServerAddress                        ="PicServerAddress";
+
+
 
     public static final int RegisterActivity                        =10026;
     public static final int CompanyActivity                         =10027;
@@ -94,7 +97,7 @@ public class Config {
     public static final int DealPicActivity                          =10029;
     public static final int GetFileActivity                         =10030;
     public static final int SetActivity                             =10031;
-    public static final int PicHistoryActivity                         =10032;
+    public static final int PicFromServerActivity                         =10032;
     public static final int DealPic2Activity                         =10033;
 
 }

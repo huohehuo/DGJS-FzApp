@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.fangzuo.assist.ABase.BaseFragment;
 import com.fangzuo.assist.Activity.DealPic2Activity;
 import com.fangzuo.assist.Activity.DealPicActivity;
-import com.fangzuo.assist.Activity.PicHistoryActivity;
+import com.fangzuo.assist.Activity.Pic4ServerActivity;
 import com.fangzuo.assist.Activity.SignActivity;
 import com.fangzuo.assist.Activity.SetActivity;
 import com.fangzuo.assist.Adapter.HomeOneAdapter;
@@ -27,7 +27,6 @@ import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.Unbinder;
 
 import static com.fangzuo.assist.Activity.DealPicActivity.baseLoc;
@@ -99,17 +98,17 @@ public class HomeOneFragment extends BaseFragment {
                 SettingList tv = (SettingList) adapter.getAllData().get(position);
                 Lg.e("listitem", tv);
                 switch (tv.activity) {
-                    case Config.SetActivity://箱码调拨单
+                    case Config.SetActivity://服务器地址设置
                         SetActivity.start(mContext);
                         break;
-                    case Config.SignActivity://箱码调拨单
+                    case Config.SignActivity://设置签名
                         SignActivity.start(mContext);
                         break;
-                    case Config.DealPicActivity://箱码调拨单
+                    case Config.DealPicActivity://处理图片
                         DealPicActivity.start(mContext,"");
                         break;
-                    case Config.PicHistoryActivity://箱码调拨单
-                        PicHistoryActivity.start(mContext);
+                    case Config.PicFromServerActivity://服务器图片
+                        Pic4ServerActivity.start(mContext);
                         break;
                     case Config.DealPic2Activity://箱码调拨单
                         DealPic2Activity.start(mContext,"");
@@ -140,7 +139,7 @@ public class HomeOneFragment extends BaseFragment {
                 SetActivity.start(mContext);
                 break;
             case R.id.cv_history_pic:
-                PicHistoryActivity.start(mContext);
+                Pic4ServerActivity.start(mContext);
                 break;
         }
     }*/

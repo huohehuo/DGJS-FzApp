@@ -1,7 +1,18 @@
-别名：FZKJ
+keytool -genkey -keystore fangzuo.keystore -keyalg RSA -validity 10000 -alias fangzuo.keystore
 密码：fangzuokeji601.
-公司名称：Fang Zuo
-包名：com.fangzuo.app
-组织：fangzuo
-china
-shenzhen
+输入密钥库口令:
+再次输入新口令:
+您的名字与姓氏是什么?
+  [Unknown]:  FANGZUO
+您的组织单位名称是什么?
+  [Unknown]:  FANGZUO
+您的组织名称是什么?
+  [Unknown]:  FANGZUO
+您所在的城市或区域名称是什么?
+  [Unknown]:  SHENZHEN
+您所在的省/市/自治区名称是什么?
+  [Unknown]:  GUANGDONG
+该单位的双字母国家/地区代码是什么?
+  [Unknown]:  CN
+CN=FANGZUO, OU=FANGZUO, O=FANGZUO, L=SHENZHEN, ST=GUANGDONG, C=CN是否正确?
+  [否]:  Y

@@ -44,6 +44,7 @@ public class DownloadReturnBean {
 	public ArrayList<SetFile> setFiles;
 	public ArrayList<RegisterBean> registerBeans;
 	public ArrayList<Company> companies;
+	public ArrayList<ImgAddress> imgAddresses;
 
 
 

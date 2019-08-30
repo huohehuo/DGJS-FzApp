@@ -42,6 +42,8 @@ public class SetActivity extends BaseActivity {
     EditText edIp;
     @BindView(R.id.ed_port)
     EditText edPort;
+    @BindView(R.id.ed_pic_address)
+    EditText edPicAddress;
     @BindView(R.id.btn_save)
     Button btnSave;
     @BindView(R.id.btn_back)
@@ -65,6 +67,8 @@ public class SetActivity extends BaseActivity {
 //        if (!share.getPort().equals("")) {
             edPort.setText(share.getPort());
 //        }
+
+        edPicAddress.setText(Hawk.get(Config.PicServerAddress,"pic"));
     }
 
     @Override
@@ -105,6 +109,7 @@ public class SetActivity extends BaseActivity {
                 if (!edPort.getText().toString().equals("") && !edIp.getText().toString().equals("")) {
                     share.setIP(edIp.getText().toString());
                     share.setPort(edPort.getText().toString());
+                    Hawk.put(Config.PicServerAddress,edPicAddress.getText().toString());
 //                    finish();
                 }
                 break;

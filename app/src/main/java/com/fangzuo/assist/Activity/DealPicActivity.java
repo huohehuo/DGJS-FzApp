@@ -68,12 +68,6 @@ public class DealPicActivity extends BaseActivity {
     EditText etH;
     @BindView(R.id.bg_set)
     CardView bgSet;
-    @BindView(R.id.btn_back)
-    RelativeLayout btnBack;
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
-    @BindView(R.id.tv_right)
-    TextView tvRight;
     public static String baseLoc = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator;
     public static final String Pic_Path   = Environment.getExternalStorageDirectory().getAbsolutePath()+"/fangzuo/fzkj-get.jpg";
 
@@ -90,8 +84,6 @@ public class DealPicActivity extends BaseActivity {
     protected void initView() {
         setContentView(R.layout.activity_get_pic);
         ButterKnife.bind(this);
-        tvTitle.setText("设置水印");
-        tvRight.setText("选择照片");
         selectPhotoDialog = new SelectPhotoDialog(DealPicActivity.this, R.style.CustomDialog);
         // 系统默认的短动画执行时间 200
         mShortAnimationDuration = getResources().getInteger(
@@ -118,7 +110,7 @@ public class DealPicActivity extends BaseActivity {
         etW.setText(logoW + "");
         tvMBot.setText("向下移动" + bottm);
         tvMRight.setText("向右移动" + left);
-
+        //获取跳转过来的图片地址
         String pic = getIntent().getStringExtra("pic_loc");
         if ("".equals(pic)){
             Glide.with(DealPicActivity.this)
@@ -192,13 +184,6 @@ public class DealPicActivity extends BaseActivity {
                 setNewBitmap();
             }
         });
-
-        tvRight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    getPic();
-            }
-        });
     }
 
     @Override
@@ -211,11 +196,14 @@ public class DealPicActivity extends BaseActivity {
 
 
 
-    @OnClick({R.id.btn1, R.id.btn_add, R.id.btn2, R.id.btn3, R.id.btn4, R.id.iv, R.id.btn_back, R.id.btn_set})
+    @OnClick({R.id.btn1, R.id.btn_add, R.id.btn2, R.id.iv_upload, R.id.btn4, R.id.iv, R.id.tv_back, R.id.iv_set, R.id.iv_get_pic})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn1:
                 SignActivity.start(mContext);
+                break;
+            case R.id.iv_get_pic:
+                getPic();
                 break;
             case R.id.btn_add:
                 setNewBitmap();
@@ -228,7 +216,7 @@ public class DealPicActivity extends BaseActivity {
             case R.id.btn2:
                 ImageUtil.saveBitmap(((BitmapDrawable) iv.getDrawable()).getBitmap(), baseLoc+"fangzuo/fzkj"+ CommonUtil.getTimeLong(false)+".jpg");
                 break;
-            case R.id.btn3:
+            case R.id.iv_upload:
                 uploadPic();
                 break;
             case R.id.btn4:
@@ -243,7 +231,7 @@ public class DealPicActivity extends BaseActivity {
 //                        .load(file)
 //                        .into(iv);
                 break;
-            case R.id.btn_set:
+            case R.id.iv_set:
                 if (bgSet.getVisibility() == View.GONE) {
                     etH.setText(logoH + "");
                     etW.setText(logoW + "");
@@ -259,6 +247,7 @@ public class DealPicActivity extends BaseActivity {
                 break;
             case R.id.iv:
                 if (bgSet.getVisibility() == View.GONE) {
+                    if (null==((BitmapDrawable) iv.getDrawable()))return;
                     Hawk.put("pic",((BitmapDrawable) iv.getDrawable()).getBitmap());
                     ShowBigPicActivity.start(mContext);
 //                    etH.setText(logoH + "");
@@ -273,7 +262,7 @@ public class DealPicActivity extends BaseActivity {
                     setNewBitmap();
                 }
                 break;
-            case R.id.btn_back:
+            case R.id.tv_back:
                 finish();
                 break;
         }

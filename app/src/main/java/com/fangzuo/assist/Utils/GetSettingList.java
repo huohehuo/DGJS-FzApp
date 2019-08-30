@@ -22,7 +22,7 @@ public class GetSettingList {
         items.add(new SettingList("设置签名",Config.SignActivity,R.mipmap.sign_home));
         items.add(new SettingList("处理图片",Config.DealPicActivity,R.mipmap.pic_home));
 //        items.add(new SettingList("处理图片2",Config.DealPic2Activity,R.mipmap.pic_home));
-//        items.add(new SettingList("历史图片",Config.PicHistoryActivity,R.mipmap.history_home));
+        items.add(new SettingList("服务器图片",Config.PicFromServerActivity,R.mipmap.cloud));
 
         return items;
     }

@@ -5,8 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context="com.fangzuo.assist.Activity.DealPicActivity">
-    <include layout="@layout/top_bar"/>
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/back"
+            />
+        <TextView
+            android:id="@+id/tv_back"
+            android:text="设置水印"
+            android:paddingLeft="30dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/iv_down_pic"
+            android:layout_toLeftOf="@+id/iv_get_pic"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="12dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/xiazai"
+            />
+        <ImageView
+            android:id="@+id/iv_get_pic"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="8dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/tupian"
+            />
+
+    </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,24 +61,35 @@
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btn_set"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/btn_login"
-                android:text="自定义设置" />
+            <ImageView
+                android:id="@+id/iv_set"
+                android:src="@drawable/shezhi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_upload"
+                android:src="@drawable/shanchuang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--<Button-->
+                <!--android:id="@+id/btn_set"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/btn_login"-->
+                <!--android:text="自定义设置" />-->
 
-            <include layout="@layout/line_shu" />
-            <Button
-                android:id="@+id/btn3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/btn_login"
-                android:text="上传图片到服务器" />
+            <!--<include layout="@layout/line_shu" />-->
+            <!--<Button-->
+                <!--android:id="@+id/btn3"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/btn_login"-->
+                <!--android:text="上传图片到服务器" />-->
 
         </LinearLayout>
         <include

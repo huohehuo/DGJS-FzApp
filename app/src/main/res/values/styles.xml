@@ -13,6 +13,18 @@
         <item name="colorPrimaryDark">#ff00ddff</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="AppTheme_PicCut" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--&lt;!&ndash; 表示状态栏透明，并且会使得状态栏悬浮在activity之上(activity布局会扩展到状态栏底部) &ndash;&gt;-->
+        <item name="android:windowTranslucentStatus">false</item>
+        <!--&lt;!&ndash; 表示导航栏半透明，并且会使得状态栏和导航栏都悬浮在activity之上 &ndash;&gt;-->
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+        <!--&lt;!&ndash;Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的颜色&ndash;&gt;-->
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
     <style name="CustomDialog" parent="android:Theme.Dialog">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>

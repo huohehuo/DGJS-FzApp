@@ -19,6 +19,7 @@ import com.fangzuo.assist.widget.LoadingUtil;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.orhanobut.hawk.Hawk;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -108,6 +109,11 @@ public class CommonUtil {
 //            Toast.showText(App.getContext(), "条码有误");
 //            return new ArrayList<>();
 //        }
+    }
+    //拼接从服务器获取的图片地址链接
+    public static String getPicServerUrl(){
+        BasicShareUtil share = BasicShareUtil.getInstance(App.getContext());
+        return share.getBaseURL()+ Hawk.get(Config.PicServerAddress,"pic")+"/";
     }
 
 

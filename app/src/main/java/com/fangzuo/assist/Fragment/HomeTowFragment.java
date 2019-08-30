@@ -6,26 +6,15 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.fangzuo.assist.ABase.BaseFragment;
-import com.fangzuo.assist.Activity.DealPic2Activity;
 import com.fangzuo.assist.Activity.DealPicActivity;
-import com.fangzuo.assist.Activity.PicHistoryActivity;
-import com.fangzuo.assist.Activity.SetActivity;
-import com.fangzuo.assist.Activity.SignActivity;
-import com.fangzuo.assist.Adapter.HomeOneAdapter;
 import com.fangzuo.assist.Adapter.PicHistoryAdapter;
-import com.fangzuo.assist.Beans.SettingList;
 import com.fangzuo.assist.R;
-import com.fangzuo.assist.Utils.Config;
 import com.fangzuo.assist.Utils.FileManager;
-import com.fangzuo.assist.Utils.GetSettingList;
-import com.fangzuo.assist.Utils.Lg;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 
@@ -156,7 +145,7 @@ public class HomeTowFragment extends BaseFragment {
                 SetActivity.start(mContext);
                 break;
             case R.id.cv_history_pic:
-                PicHistoryActivity.start(mContext);
+                Pic4ServerActivity.start(mContext);
                 break;
         }
     }*/
