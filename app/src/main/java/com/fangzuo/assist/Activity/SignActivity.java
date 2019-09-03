@@ -40,6 +40,7 @@ public class SignActivity extends BaseActivity {
     ImageView ivImg;
 
     public static String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "fangzuo/fzkj.png";
+    public static String path_logo = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "fangzuo/fzkj_logo.png";
     @BindView(R.id.btn_back)
     RelativeLayout btnBack;
     @BindView(R.id.tv_title)

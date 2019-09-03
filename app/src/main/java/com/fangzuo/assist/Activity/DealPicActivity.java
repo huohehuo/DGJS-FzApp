@@ -196,7 +196,7 @@ public class DealPicActivity extends BaseActivity {
 
 
 
-    @OnClick({R.id.btn1, R.id.btn_add, R.id.btn2, R.id.iv_upload, R.id.btn4, R.id.iv, R.id.tv_back, R.id.iv_set, R.id.iv_get_pic})
+    @OnClick({R.id.btn1, R.id.btn_add, R.id.btn2, R.id.iv_upload, R.id.btn4, R.id.iv, R.id.tv_back, R.id.iv_set, R.id.iv_get_pic, R.id.iv_down_pic})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn1:
@@ -265,29 +265,12 @@ public class DealPicActivity extends BaseActivity {
             case R.id.tv_back:
                 finish();
                 break;
+            case R.id.iv_down_pic:
+                setNewBitmap4Logo();
+                break;
         }
     }
 
-    //上传图片到服务器
-    private void uploadPic() {
-        ImageBean bean = new ImageBean();
-        bean.bitmapByte = ImageUtil.getBitmap2Byte(((BitmapDrawable) iv.getDrawable()).getBitmap());
-        App.getRService().doIOAction("ImageUpload", gson.toJson(bean), new MySubscribe<CommonResponse>() {
-            @Override
-            public void onNext(CommonResponse commonResponse) {
-                super.onNext(commonResponse);
-                Lg.e("上传成功");
-                Toast.showText(mContext, "上传成功");
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                super.onError(e);
-                Lg.e("上传失败" + e.getMessage());
-                Toast.showText(mContext, "上传失败" + e.getMessage());
-            }
-        });
-    }
 
     int left = 0;
     int bottm = 0;
@@ -310,7 +293,25 @@ public class DealPicActivity extends BaseActivity {
 
         iv.setImageBitmap(watermarkBitmap);
     }
+    //设置水印位置及大小
+    private void setNewBitmap4Logo() {
+        Lg.e("当前left-bottm", left + "-" + bottm);
+        if (null == basePic) return;
+        //获取原始图片
+        Bitmap sourBitmap = ((BitmapDrawable) iv.getDrawable()).getBitmap();
+        //水印图片
+        Bitmap waterBitmap = BitmapFactory.decodeFile(SignActivity.path_logo);
+        if (null == waterBitmap)return;
+//        Bitmap watermarkBitmap = ImageUtil.createWaterMaskCenter(sourBitmap, waterBitmap);
+        Bitmap watermarkBitmap = ImageUtil.createWaterMaskLeftTop(sourBitmap, waterBitmap, 300, 400, 220, 220);
+//        watermarkBitmap = ImageUtil.createWaterMaskRightBottom(watermarkBitmap, waterBitmap, 0, 0);
+//        watermarkBitmap = ImageUtil.createWaterMaskLeftTop(watermarkBitmap, waterBitmap, 0, 0);
+//        watermarkBitmap = ImageUtil.createWaterMaskRightTop(watermarkBitmap, waterBitmap, 0, 0);
 
+        iv.setImageBitmap(watermarkBitmap);
+    }
+
+    //获取照片
     private void getPic(){
         selectPhotoDialog.setDialogCallBack(new SelectPhotoDialog.SelectPhoteDialogCallBack() {
             @Override
@@ -371,6 +372,26 @@ public class DealPicActivity extends BaseActivity {
                     break;
             }
         }
+    }
+    //上传图片到服务器
+    private void uploadPic() {
+        ImageBean bean = new ImageBean();
+        bean.bitmapByte = ImageUtil.getBitmap2Byte(((BitmapDrawable) iv.getDrawable()).getBitmap());
+        App.getRService().doIOAction("ImageUpload", gson.toJson(bean), new MySubscribe<CommonResponse>() {
+            @Override
+            public void onNext(CommonResponse commonResponse) {
+                super.onNext(commonResponse);
+                Lg.e("上传成功");
+                Toast.showText(mContext, "上传成功");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                super.onError(e);
+                Lg.e("上传失败" + e.getMessage());
+                Toast.showText(mContext, "上传失败" + e.getMessage());
+            }
+        });
     }
 
     public static void start(Context context,String loc) {

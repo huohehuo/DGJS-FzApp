@@ -33,9 +33,9 @@
             android:layout_toLeftOf="@+id/iv_get_pic"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginRight="12dp"
+            android:layout_marginRight="16dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/xiazai"
+            android:src="@drawable/write"
             />
         <ImageView
             android:id="@+id/iv_get_pic"
