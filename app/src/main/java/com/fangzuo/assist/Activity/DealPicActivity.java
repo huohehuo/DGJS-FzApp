@@ -36,6 +36,7 @@ import com.fangzuo.assist.Utils.ImageUtil;
 import com.fangzuo.assist.Utils.Lg;
 import com.fangzuo.assist.Utils.MathUtil;
 import com.fangzuo.assist.Utils.Toast;
+import com.fangzuo.assist.widget.LoadingUtil;
 import com.fangzuo.assist.widget.piccut.CropImageActivity;
 import com.fangzuo.assist.widget.piccut.SelectPhotoDialog;
 import com.orhanobut.hawk.Hawk;
@@ -375,12 +376,14 @@ public class DealPicActivity extends BaseActivity {
     }
     //上传图片到服务器
     private void uploadPic() {
+        LoadingUtil.showDialog(mContext,"正在上传...");
         ImageBean bean = new ImageBean();
         bean.bitmapByte = ImageUtil.getBitmap2Byte(((BitmapDrawable) iv.getDrawable()).getBitmap());
         App.getRService().doIOAction("ImageUpload", gson.toJson(bean), new MySubscribe<CommonResponse>() {
             @Override
             public void onNext(CommonResponse commonResponse) {
                 super.onNext(commonResponse);
+                LoadingUtil.dismiss();
                 Lg.e("上传成功");
                 Toast.showText(mContext, "上传成功");
             }
@@ -388,6 +391,7 @@ public class DealPicActivity extends BaseActivity {
             @Override
             public void onError(Throwable e) {
                 super.onError(e);
+                LoadingUtil.dismiss();
                 Lg.e("上传失败" + e.getMessage());
                 Toast.showText(mContext, "上传失败" + e.getMessage());
             }
